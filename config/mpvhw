@@ -1,0 +1,3 @@
+#!/bin/sh
+# Форс-тест hw-декода (не обязателен: обычный mpv берёт настройки из mpv.conf)
+LD_LIBRARY_PATH=/opt/mpv exec mpv --no-config --fs --vo=gpu --gpu-context=drm --hwdec=v4l2m2m-copy --hwdec-codecs=hevc,vp9 "$@"

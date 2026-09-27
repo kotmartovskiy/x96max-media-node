@@ -1,0 +1,4 @@
+﻿*.sh text eol=lf
+config/mpvhw text eol=lf
+config/*.conf text eol=lf
+*.md text
