@@ -73,3 +73,16 @@ systemctl restart systemd-logind
    Нужное значение надо запрашивать через `get_property`.
 9. На DRM `cycle fullscreen` — no-op (плеер и так fullscreen), поэтому
    Menu переназначен на статистику mpv.
+10. **После ребута пульт молчит, хотя `ir-keymap.service` отработал**
+    (журнал: «Wrote 33 keycode(s)»). Причина — гонка с udev:
+    `/lib/udev/rules.d/70-infrared.rules` при добавлении input-устройства
+    дёргает `ir-keytable -a /etc/rc_maps.cfg -s rcX` (вывод в журнал не
+    пишется), а в `/etc/rc_maps.cfg` строка
+    `* rc-x96max x96max.toml` указывала на **стоковую** 28-клавишную
+    таблицу `0x01xx` — она затирала нашу уже ПОСЛЕ сервиса. Симптом:
+    `ir-keytable -t` показывает scancodes (`0xdfxx`), но `/dev/input/event*`
+    отдаёт только `EV_MSC` — без `EV_KEY` (scancode не найден в таблице),
+    мост молчит. Лечение: в `/etc/rc_maps.cfg` перенаправить строку на наш
+    файл — `* rc-x96max    /root/x96max.toml` (бэкап:
+    `/etc/rc_maps.cfg.bak-*`). Теперь и udev, и сервис грузят одну
+    таблицу, конфликт невозможен.
