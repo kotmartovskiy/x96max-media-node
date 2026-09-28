@@ -17,7 +17,8 @@
 | 4K HEVC hw | ❌ CMA 256MB мало под DPB → тоже #3690 |
 | MPEG-2 hw | ❌ «Buffer N done but it doesn't exist in m2m_ctx» |
 | mpv-стек (libav-фикc, conf, синхронизация) | ✅ см. [docs/mpv-setup.md](docs/mpv-setup.md) |
-| HDD / пульт / камеры / DVB / SDR | ⏳ планы, см. [docs/plans.md](docs/plans.md) |
+| ИК-пульт (33 кнопки, keymap + мост в mpv) | ✅ см. [docs/ir-remote.md](docs/ir-remote.md) |
+| HDD / камеры / DVB / SDR | ⏳ планы, см. [docs/plans.md](docs/plans.md) |
 
 ## Структура
 

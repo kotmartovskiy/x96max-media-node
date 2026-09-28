@@ -1,0 +1,11 @@
+[Unit]
+Description=X96 Max IR remote keymap (x96max-android)
+After=systemd-udevd.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/ir-keytable -s rc1 -w /root/x96max.toml
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

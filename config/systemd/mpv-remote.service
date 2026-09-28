@@ -1,0 +1,11 @@
+[Unit]
+Description=IR remote to mpv IPC bridge
+After=multi-user.target
+
+[Service]
+ExecStart=/usr/bin/python3 /root/mpv-remote.py
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target
