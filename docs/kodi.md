@@ -58,6 +58,10 @@ SIGTERM → Kodi сохранит старые in-memory значения пов
   `Failed to CreateThumbnailFromSurface` + `CThumbnailWriter::DoWork unable to write`
   → создаётся **0-байтный** png. GL-readback/GBM — баг стека, не пути.
 - `/dev/fb0` показывает **старую консоль** (лог загрузки), а не картинку Kodi.
+- **Обходной путь — общий KMS-захват** [kmsgrab.md](kmsgrab.md): снимает
+  экран без master-прав (работает при DRM master Kodi/RA/mpv). Контрольный
+  скриншот главного меню Estuary после перезапуска (`/root/shots/kodi_menu.png`)
+  — состояние восстановлено, RA остановлен.
 
 ## Медиа для тестов (в /root)
 
