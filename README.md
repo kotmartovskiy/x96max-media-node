@@ -18,12 +18,14 @@
 | MPEG-2 hw | ❌ «Buffer N done but it doesn't exist in m2m_ctx» |
 | mpv-стек (libav-фикc, conf, синхронизация) | ✅ см. [docs/mpv-setup.md](docs/mpv-setup.md) |
 | ИК-пульт (33 кнопки, keymap + мост в mpv) | ✅ см. [docs/ir-remote.md](docs/ir-remote.md) |
+| Передняя панель FD628 (часы, индикаторы) | ✅ см. [docs/vfd-display.md](docs/vfd-display.md) |
+| Kodi 20.1 / RetroArch 1.14 | ⏳ установлены, первый запуск в процессе |
 | HDD / камеры / DVB / SDR | ⏳ планы, см. [docs/plans.md](docs/plans.md) |
 
 ## Структура
 
 ```
-docs/    — железо, статус кодеков, сетап mpv, планы
+docs/    — железо, статус кодеков, mpv, ИК-пульт, панель FD628, планы
 config/  — рабочие конфиги с бокса (mpv.conf, обвязки, ld-fix)
 scripts/ — воспроизводимые скрипты (прошивки, libav-фикс, тесты)
 issue/   — черновик issue для ophub (опубликован как #3690)
